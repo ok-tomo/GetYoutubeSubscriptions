@@ -4,15 +4,15 @@ import axios from 'axios';
 function VideoPlayer(props) {
   const title = props.title;
   const thumbnail = props.thumbnail;
-  const url = 'https://www.youtube.com/watch?v=' + props.videoId;
+  const url = "https://www.youtube.com/watch?v=" + props.videoId;
 
   return (
-    <a href={ url } className='url'>
+    <a href={ url } className="url">
       <div className="ytplayer">
-        <div className='ytthumb'>
+        <div className="ytthumb">
           <img src={ thumbnail } alt={ "title:" + title } />
         </div>
-        <div className='yttitle'>
+        <div className="yttitle">
           { title }
         </div>
       </div>
@@ -21,13 +21,13 @@ function VideoPlayer(props) {
 }
 
 function Channel(props) {
-  const url = 'https://www.youtube.com/channel/' + props.data.channelId;
+  const url = "https://www.youtube.com/channel/" + props.data.channelId;
 
   return (
-    <a href={ url } className='url'>
+    <a href={ url } className="url">
       <div className="channel">
-        <div className='channel-icon'>
-          <img id='channel-image' src={ props.data.thumbnail } alt={ props.data.title }/>
+        <div className="channel-icon">
+          <img id="channel-image" src={ props.data.thumbnail } alt={ props.data.title }/>
         </div>
         <div className="channel-name">{ props.data.title }</div>
       </div>
@@ -55,8 +55,8 @@ class VideoLadder extends Component {
     const accessToken = this.props.accessToken;
     const channelId = id;
     const maxResults = 20;
-    const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&maxResults=' + maxResults + '&channelId=' + channelId;
-    const addToken = '&access_token=' + accessToken;
+    const url = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&maxResults=" + maxResults + "&channelId=" + channelId;
+    const addToken = "&access_token=" + accessToken;
 
     axios.get(url + addToken).then((res) => {
       const nextPageToken = res.data.nextPageToken;
@@ -91,7 +91,7 @@ class VideoLadder extends Component {
     }
 
     return (
-      <div className='ladder'>
+      <div className="ladder">
         <Channel data={ this.props.channel } />
         { video }
       </div>

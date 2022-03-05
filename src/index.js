@@ -36,8 +36,8 @@ class Index extends Component {
     }
 
     getMySubscriptions = (accessToken) => {
-      const url = 'https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&maxResults=10';
-      const addToken = '&access_token=' + accessToken;
+      const url = "https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&maxResults=10";
+      const addToken = "&access_token=" + accessToken;
 
       axios.get(url + addToken).then(res => {
         const channels = res.data.items.map((item) => {
@@ -60,25 +60,25 @@ class Index extends Component {
         return (
           <React.Fragment>
             <header className="header">
-              <div className='icon'></div>
+              <div className="icon"></div>
               <div className="brand">YTSubs</div>
-              <div className='form-wrapper'>
-                {/* <input id='inputbox' type="text" value='Search keyword' /> */}
+              <div className="form-wrapper">
+                {/* <input id="inputbox" type="text" value="Search keyword" /> */}
               </div>
               <div className="loginButton">
                 <GoogleLogin
                   clientId={ CLIENT_ID }
                   render={renderProps => (
-                    <div className='icon-button'>
+                    <div className="icon-button">
                       <Button onClick={ renderProps.onClick } disabled={ renderProps.disabled }>
-                        <Avatar alt='My Account Name'src={ '' } />
+                        <Avatar alt="My Account Name"src="" />
                       </Button>
                     </div>
                   )}
                   onSuccess={ this.loginSuccess }
                   onFailure={ this.loginFailure }
-                  scope={ 'https://www.googleapis.com/auth/youtube.readonly' }
-                  cookiePolicy={ 'single_host_origin' }
+                  scope="https://www.googleapis.com/auth/youtube.readonly"
+                  cookiePolicy="single_host_origin"
                   isSignedIn={ true }
                 />
               </div>
@@ -93,5 +93,5 @@ class Index extends Component {
 
 ReactDOM.render(
   <Index />,
-  document.getElementById('root')
+  document.getElementById("root")
 );
