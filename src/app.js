@@ -54,7 +54,7 @@ class VideoLadder extends Component {
   getVideos = (id) => {
     const accessToken = this.props.accessToken;
     const channelId = id;
-    const maxResults = 10;
+    const maxResults = 20;
     const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&maxResults=' + maxResults + '&channelId=' + channelId;
     const addToken = '&access_token=' + accessToken;
 

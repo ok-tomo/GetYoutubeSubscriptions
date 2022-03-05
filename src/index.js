@@ -36,7 +36,7 @@ class Index extends Component {
     }
 
     getMySubscriptions = (accessToken) => {
-      const url = 'https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true';
+      const url = 'https://www.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&maxResults=10';
       const addToken = '&access_token=' + accessToken;
 
       axios.get(url + addToken).then(res => {
