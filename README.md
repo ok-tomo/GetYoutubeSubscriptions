@@ -1,6 +1,6 @@
 # GetYoutubeSubscriptions
 
-Reactの練習です。  
+Reactの練習に制作しました。  
 ログインするとYouTubeから登録済みのチャンネルと動画を取得します。
 
 | package | version |
